@@ -1,0 +1,237 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'nav.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'asset_maintainence/css/index.css' %}">
+    <script src="{% static 'asset_maintainence/js/fontawsome.js' %}"></script>
+    <title>Project</title>
+</head>
+
+<body>
+    <!--<div class="nav-wrapper">
+        <nav class="nav">
+            <div class="bard-logo">
+                <i class="fas icus fa-bars"></i>
+            </div>
+            <div class="links">
+                <div class="icons">
+                    <i class="fas icus fa-map-marker-alt"></i>
+                    <i class="fas icus fa-bell"></i>
+                    <i class="far icus fa-calendar-alt"></i>
+                    <i class="fas icus fa-question"></i>
+                    <i class="fas icus fa-expand full_screen" title="Full Screen"></i>
+                </div>
+                <div class="user-info">
+                    <span class="username">Hello, User <i class="fas fa-chevron-down"></i></span>
+                </div>
+            </div>
+        </nav>
+    </div>--> {% include 'nav.html' %}
+
+    <div class="asset-maintenance">
+        <span class="asset-txt">Asset Maintenance</span>
+    </div>
+
+    <div class="icons-breadcrumbs">
+        <div class="bread-crumb">
+            <h2>Asset Maintenance</h2>
+            <ul class="bread-crumb-ul">
+                <li class="bread-crumb-li">
+                    <a href="#" class="breadcrumb-link">Home</a>
+                </li>
+                <li class="bread-crumb-li">
+                    <a href="#" class="breadcrumb-link breadcrumb-link-active">Asset Maintenance</a>
+                </li>
+            </ul>
+            <div class="float-right-contents">
+                <i class="fas fa-qrcode"><span class="tooltiptext">Qr
+                        code</span></i>
+                <i class="fas fa-history"><span class="tooltiptext">Import Logs</span></i>
+                <i class="fas fa-upload"><span class="tooltiptext">Bulk Upload</span></i>
+                <i class="fas fa-table"><span class="tooltiptext">Grid
+                        View</span></i>
+                <i class="fas fa-sitemap"><span class="tooltiptext">Tree View</span></i>
+                <button class="grp">Add Asset</button>
+            </div>
+            <div class="tree-view-links">
+                <a href="/customer" class="main-links">Customer</a><br>
+                <a href="/manufacturer" class="main-links">Manufacturer</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="box-details">
+            <div class="search_bar">
+                <i class="fas fa-filter fa-sm"><span class="tooltiptext">Advanced
+                        Search</span></i>
+                <button type="submit"><i class="fa fa-search"></i></button>
+                <input type="text" placeholder="Ticket Search" name="search" autocomplete="off">
+            </div>
+            <br><br><br>
+            <div class="main-content">
+                <p><b>1. SPLIT A/C - XYZ-123</b></p>
+                <i class="far fa-trash-alt"><span class="tooltiptext">Deactivate</span></i>
+                <i class="far fa-clock"><span class="tooltiptext">Total Schedule
+                        Configured:0</span></i>
+                <i class="far fa-edit"><span class="tooltiptext">Edit</span></i>
+                <i class="far fa-file-alt"><span class="tooltiptext">View</span></i>
+                <input type="checkbox" name="tf" class="slider-checkbox"></p><br>
+                <p>Type : Asset&emsp;Manufacturer : BLUE STAR&emsp;Category : EQUIPMENT&emsp;Sub-Category : A/C</p>
+            </div>
+            <footer>1-1 of 1 Asset</footer>
+        </div>
+    </div>
+
+    <div class="bg-modal">
+        <div class="modal">
+            <div class="topic">
+                <p>Bulk Upload Asset with Asset Id</p>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="topic-required-details">
+                <p>Upload Note<span>&nbsp;*</span></p><input type="text" name="upload_note" id="upload_note"
+                    placeholder="Upload Note" autocomplete="off" required><span></span>
+                <p>Upload File<span>&nbsp;*</span></p><input type="text" name="upload_file" id="upload_file"
+                    placeholder="Upload File" autocomplete="off" required>
+                <div class="file-btn-ui">
+                    <input type="file" id="file" accept=".xls,.xlsx" />
+                    <label for="file"><i class="fas fa-paperclip"></i></label>
+                </div>
+                <span></span>
+                <div class="split-it-again">
+                    <i class="fas fa-file-upload"></i>
+                    <p>Note : File format (XLS,XLSX) and File size is maximum 20MB</p>
+                </div>
+                <span></span>
+                <span></span>
+                <div class="split-it-for-btns">
+                    <input type="button" value="Cancel" id="cancel_btn">
+                    <input type="button" value="Import">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-modal-filter">
+        <div class="modal-filter">
+            <div class="topic-filter">
+                <p>Search Asset</p>
+                <span class="close-modal-filter">&times;</span>
+            </div>
+            <form>
+                <div class="topic-required-details-filter">
+                    <label for="asset_type_filter">Asset Type</label>
+                    <select name="asset_type_filter" id="asset_type_filter">
+                        <option value="Asset">Asset</option>
+                        <option value="Measuring Equipment">Measuring Equipment</option>
+                        <option value="Facility">Facility</option>
+                    </select>
+
+                    <label for="customer_filter">Customer</label>
+                    <input type="text" name="customer_filter" id="customer_filter">
+
+                    <label for="building_filter">Building</label>
+                    <input type="text" name="building_filter" id="building_filter">
+
+                    <label for="floor_filter">Floor</label>
+                    <input type="text" name="floor_filter" id="floor_filter">
+
+                    <label for="department_filter">Department</label>
+                    <input type="text" name="department_filter" id="department_filter">
+                    <span></span>
+                    <div class="split-it-for-btns-filter">
+                        <input type="reset" value="Reset">
+                        <input type="button" value="Search">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="bg-modal-deactivate">
+        <div class="modal-deactivate">
+            <div class="topic-deactivate">
+                <p>Confirm</p>
+                <span class="close-modal-deactivate">&times;</span>
+            </div>
+            <div class="deactivate-txt">
+                <h3>Are you sure?</h3>
+                <h4>Do you really want to Inactivate this record?</h4><br>
+                <p>Reason for Deactivate&ensp;<span>*</span></p>
+                <input type="text" name="reason_for_deactivate" id="reason_for_deactivate" required>
+            </div>
+            <div class="split-it-for-btns-deactivate">
+                <input type="button" value="Yes">
+                <input type="button" value="No" id="deactivateNo">
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="{% static 'asset_maintainence/js/index.js' %}"></script>
+<script>
+    let $_qr_code = document.getElementsByClassName('fas fa-qrcode')[0]
+    let $_history = document.getElementsByClassName('fas fa-history')[0]
+    let $_upload = document.getElementsByClassName('fas fa-upload')[0]
+    let $_table = document.getElementsByClassName('fas fa-table')[0]
+    let $_sitemap = document.getElementsByClassName('fas fa-sitemap')[0]
+    let $_grp = document.getElementsByClassName('grp')[0]
+    let $_filter = document.getElementsByClassName('fas fa-filter fa-sm')[0]
+    let $_trash_alt = document.getElementsByClassName('far fa-trash-alt')[0]
+    let $_clock = document.getElementsByClassName('far fa-clock')[0]
+    let $_edit = document.getElementsByClassName('far fa-edit')[0]
+    let $_file_alt = document.getElementsByClassName('far fa-file-alt')[0]
+
+
+    $_qr_code.addEventListener('click', () => {
+        window.open('/search_qr_code', '_self');
+    })
+
+    $_history.addEventListener('click', () => {
+        window.open('/bulk_import_logs', '_self');
+    })
+
+    $_upload.addEventListener('click', () => {
+        bulkupload();
+    })
+
+    $_table.addEventListener('click', () => {
+        window.open('/', '_self');
+    })
+
+    $_sitemap.addEventListener('click', () => {
+        change_display();
+    })
+
+    $_grp.addEventListener('click', () => {
+        window.open('/add_asset', '_self')
+    })
+
+    $_filter.addEventListener('click', () => {
+        advanced_filter()
+    })
+
+    $_trash_alt.addEventListener('click', () => {
+        deactivate()
+    })
+
+    $_clock.addEventListener('click', () => {
+        window.open('/schedule_configured', '_self');
+    })
+
+    $_edit.addEventListener('click', () => {
+        window.open('/edit', '_self');
+    })
+
+    $_file_alt.addEventListener('click', () => {
+        window.open('/view', '_self');
+    })
+</script>
+
+</html>

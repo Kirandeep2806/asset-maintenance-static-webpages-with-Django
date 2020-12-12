@@ -1,0 +1,229 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'nav.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'asset_maintainence/css/index.css' %}">
+    <script src="{% static 'asset_maintainence/js/fontawsome.js' %}"></script>
+    <title>Project</title>
+</head>
+
+<body>
+    <!--<div class="nav-wrapper">
+        <nav class="nav">
+            <div class="bard-logo">
+                <i class="fas icus fa-bars"></i>
+            </div>
+            <div class="links">
+                <div class="icons">
+                    <i class="fas icus fa-map-marker-alt"></i>
+                    <i class="fas icus fa-bell"></i>
+                    <i class="far icus fa-calendar-alt"></i>
+                    <i class="fas icus fa-question"></i>
+                    <i class="fas icus fa-expand full_screen" title="Full Screen"></i>
+                </div>
+                <div class="user-info">
+                    <span class="username">Hello, User <i class="fas fa-chevron-down"></i></span>
+                </div>
+            </div>
+        </nav>
+    </div>--> {% include 'nav.html' %}
+
+    <div class="asset-maintenance">
+        <span class="asset-txt">Asset Maintenance</span>
+    </div>
+
+    <div class="icons-breadcrumbs">
+        <div class="bread-crumb">
+            <h2>Asset Maintenance</h2>
+            <ul class="bread-crumb-ul">
+                <li class="bread-crumb-li">
+                    <a href="#" class="breadcrumb-link">Home</a>
+                </li>
+                <li class="bread-crumb-li">
+                    <a href="/" class="breadcrumb-link">Asset Maintenance</a>
+                </li>
+                <li class="bread-crumb-li">
+                    <a href="#" class="breadcrumb-link breadcrumb-link-active">SPLIT A/C - XYZ-123</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="view">
+            <div class="view-page">
+
+                <label for="asset_type">Asset Type</label>
+                <div class="asset-type">
+                    <input type="text" name="asset_type" placeholder="Asset" disabled>
+                </div>
+
+                <label>Upload Product Image</label>
+
+                <div class="edit-file-btn-ui"></div>
+                <label for="manufacturer">Manufacturer</label>
+                <div class="manufacturer">
+                    <input type="text" name="manufacturer" placeholder="BLUE STAR" disabled>
+                </div>
+                <label for="warranty_duration">Warranty Duration</label>
+                <div class="warranty-txt-select">
+                    <input type="text" name="warranty_duration" id="warranty_duration" placeholder="1" disabled>
+                    <select name="warranty_select" id="warranty_select" disabled>
+                        <option value="year">Year(s)</option>
+                        <option value="month">Month(s)</option>
+                        <option value="day">Day(s)</option>
+                    </select>
+                </div>
+                <label for="category">Category&ensp;<span>*</span></label>
+                <div class="category">
+                    <input type="text" name="category" placeholder="EQUIPEMENT" disabled>
+                </div>
+                <label for="is_movable">Is Movable ?</label>
+                <div class="edit-checkbox">
+                    <p style="font-size: 0.91   em; font-family: Roboto; color: gray;">No</p>
+                </div>
+                <label for="sub_category">Sub-Category</label>
+                <div class="sub_category">
+                    <input type="text" name="sub_category" placeholder="" disabled>
+                </div>
+                <span></span>
+                <p></p>
+                <label for="asset_name">Asset Name&ensp;<span>*</span></label>
+                <input type="text" name="asset_name" id="asset_name" value="SPLIT/AC" required disabled>
+
+                <span></span>
+                <span></span>
+                <label for="asset_model">Asset Model&ensp;<span>*</span></label>
+                <input type="text" name="asset_model" id="asset_model" value="XYZ-123" required disabled>
+
+                <span></span>
+                <span></span>
+                <label for="description">Description</label>
+                <input type="text" name="description" id="description" value="2 TONS SPLIT/AC" disabled>
+
+                <span></span>
+
+            </div>
+            <div class="edit-cancel-save-btns">
+                <input type="button" value="Cancel">
+                <input type="button" value="Save">
+            </div>
+            <div class="bottom-navbar">
+                <ul>
+                    <li>
+                        <a href="#" class="bottom-navbar-redirect">Spare Parts</a><a href="#"
+                            class="bottom-navbar-redirect">Documents</a><a href="#" class="bottom-navbar-redirect">Self
+                            Diagnosis</a><a href="#" class="bottom-navbar-redirect">Solution Bank</a><a href="#"
+                            class="bottom-navbar-redirect">Additional Info</a><a href="#"
+                            class="bottom-navbar-redirect">Monitoring Point</a><a href="#"
+                            class="bottom-navbar-redirect">Schedule</a><a href="#"
+                            class="bottom-navbar-redirect active">Asset ID</a>
+                    </li>
+                </ul>
+            </div>
+
+            <input type="button" value="Add Asset Id" id="add_asset_id">
+            <table id="schedule_view_table">
+                <tr>
+                    <th>S.No</th>
+                    <th>Asset Id</th>
+                    <th><i class="fas fa-filter fa-sm"></i>Asset Number</th>
+                    <th><i class="fas fa-filter fa-sm"></i>Qr code<i class="fas fa-sort-up"></i></th>
+                    <th><i class="fas fa-filter fa-sm"></i>Year of Manufacturing<i class="fas fa-sort-up"></i></th>
+                    <th><i class="fas fa-filter fa-sm"></i>Capacity Rating<i class="fas fa-sort-up"></i></th>
+                    <th><i class="fas fa-filter fa-sm"></i>Installation Date<i class="fas fa-sort-up"></i></th>
+                    <th><i class="fas fa-filter fa-sm"></i>Criticality<i class="fas fa-sort-up"></i></th>
+                    <th><i class="fas fa-filter fa-sm"></i>Customer Name<i class="fas fa-sort-up"></i></th>
+                    <th>Location Name<i class="fas fa-filter fa-sm"></i></th>
+                    <th>Status<i class="fas fa-sort-up"></i></th>
+                    <th style="width: 20%;">Action<i class="fas fa-sort-up"></i></th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>MT0000001</td>
+                    <td>MT0000001</td>
+                    <td>MT0000001</td>
+                    <td>2019</td>
+                    <td>2 TONS</td>
+                    <td>30/10/2019</td>
+                    <td>Critical</td>
+                    <td>MUBARAK TOWERS</td>
+                    <td></td>
+                    <td><input type="checkbox" name="tf" class="slider-checkbox"></td>
+                    <td style="width: 20%;"><i class="far fa-edit"><span class="tooltiptext">Edit</span></i><i
+                            class="fas fa-sitemap"></i><i class="far fa-clock"><span class="tooltiptext">Total Schedule
+                                Configured:0, Total Schedule Initiate:0</span></i><i class="fas fa-desktop"><span
+                                class="tooltiptext">Monitoring Points</span></i><i class="fas fa-undo"><span
+                                class="tooltiptext">History</span></i><i class="fa fa-upload"><span
+                                class="tooltiptext">Upload Documents</span></i><i class="fas fa-trash-alt"></i>
+                    </td>
+                </tr>
+            </table>
+            <p>1-1 of 1 Asset ID</p>
+        </div>
+    </div>
+
+    <div class="bg-modal-edit" id="bg_modal_edit_schedule">
+        <div class="modal-edit">
+            <div class="topic-edit">
+                <p>Upload Document</p>
+                <span class="close-modal-edit">&times;</span>
+            </div>
+            <div class="topic-required-details-edit">
+                <input type="button" value="Add Document" id="add_document"><br><br>
+                <table>
+                    <tr>
+                        <th style="width: 10%;">S.No</th>
+                        <th style="width: 20%;">Type</th>
+                        <th style="width: 45%;">Action</th>
+                        <th style="width: 25%;">Type</th>
+                    </tr>
+                    <tr id="hide_this_onclick">
+                        <td></td>
+                        <td></td>
+                        <td>No Documents are available</td>
+                        <td></td>
+                    </tr>
+                    <tr id="display_this_onclick">
+                        <td>1</td>
+                        <td>
+                            <select name="upload_document_type" id="upload_document_type">
+                                <option value="demo1">Demo1</option>
+                                <option value="demo2">Demo2</option>
+                                <option value="demo3">Demo3</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="file-btn-ui">
+                                <input type="file" id="file" accept=".xls,.xlsx,.pdf,.doc,.docx,.ppt,.pptx" />
+                                <label for="file"><i class="fas fa-paperclip"></i></label>
+                                <p title="Attach Files"><span>*</span>PDF, DOC, XLS, PPT. Maximum File size: 20MB</p>
+                            </div>
+                        </td>
+                        <td style="text-align: right;">
+                            <i class="fas fa-trash-alt"></i>
+                        </td>
+                    </tr>
+                </table>
+                <div class="edit-cancel-save-btns">
+                    <input type="button" value="Cancel" id="cancel_btn_edit">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="{% static 'asset_maintainence/js/index.js' %}"></script>
+<script>
+    let $_upload = document.querySelector('.fa.fa-upload');
+    $_upload.addEventListener('click', () => {
+        UploadDocuments();
+    })
+</script>
+
+</html>

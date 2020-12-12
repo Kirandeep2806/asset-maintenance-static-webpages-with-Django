@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'nav.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'asset_maintainence/css/bulk_import_logs.css' %}">
+    <link rel="stylesheet" href="{% static 'asset_maintainence/css/index.css' %}">
+    <script src="{% static 'asset_maintainence/js/fontawsome.js' %}"></script>
+    <title>Project</title>
+</head>
+
+<body>
+    <!--<div class="nav-wrapper">
+        <nav class="nav">
+            <div class="bard-logo">
+                <i class="fas icus fa-bars"></i>
+            </div>
+            <div class="links">
+                <div class="icons">
+                    <i class="fas icus fa-map-marker-alt"></i>
+                    <i class="fas icus fa-bell"></i>
+                    <i class="far icus fa-calendar-alt"></i>
+                    <i class="fas icus fa-question"></i>
+                    <i class="fas icus fa-expand full_screen" title="Full Screen"></i>
+                </div>
+                <div class="user-info">
+                    <span class="username">Hello, User <i class="fas fa-chevron-down"></i></span>
+                </div>
+            </div>
+        </nav>
+    </div>--> {% include 'nav.html' %}
+
+    <div class="asset-maintenance">
+        <span class="asset-txt">Asset Maintenance</span>
+    </div>
+
+    <div class="icons-breadcrumbs">
+        <div class="bread-crumb">
+            <h2>Asset Maintenance</h2>
+            <ul class="bread-crumb-ul">
+                <li class="bread-crumb-li">
+                    <a href="#" class="breadcrumb-link">Home</a>
+                </li>
+                <li class="bread-crumb-li">
+                    <a href="#" class="breadcrumb-link">Setup</a>
+                </li>
+                <li class="bread-crumb-li">
+                    <a href="#" class="breadcrumb-link breadcrumb-link-active">Bulk Import Logs</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="box-details">
+            <div class="table-contents">
+                <table>
+                    <tr>
+                        <th>S.No</th>
+                        <th>File Name</th>
+                        <th><i class="fas fa-filter fa-sm"></i>Created By</th>
+                        <th><i class="fas fa-filter fa-sm"></i>Status</th>
+                        <th><i class="fas fa-filter fa-sm"></i>Created Date</th>
+                        <th><i class="fas fa-filter fa-sm"></i>Action</th>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6">No record(s) found.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="{% static 'asset_maintainence/js/bulk_import_logs.js' %}"></script>
+
+</html>

@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.asset-maintenance {
+    position: relative;
+    width: 18vw;
+    background-color: #0F2846;
+    /* z-index: -1; */
+    height: 100vh;
+}
+
+.asset-maintenance .asset-txt {
+    position: absolute;
+    font-family: "Calibri";
+    text-align: center;
+    font-size: larger;
+    color:  white;
+    top: 3em;
+    width: 100%;
+}
+
+.icons-breadcrumbs {
+    background-color: #f0f0f0;
+    position: absolute;
+    top: 6vh;
+    left: 18vw;
+    width: 82vw;
+    height: 19vh;
+    box-shadow: 0 1px 1rem rgba(0, 0, 0, 0.5);
+}
+
+.icons-breadcrumbs .bread-crumb h2 {
+    font-size: 24px;
+    font-family: "Calibri";
+    margin: 1em 1em;
+}
+
+.icons-breadcrumbs .bread-crumb ul{
+    margin-left: 1.4em;
+}
+
+.icons-breadcrumbs .bread-crumb .bread-crumb-ul li {
+    display: inline-block;
+}
+
+.icons-breadcrumbs .bread-crumb .bread-crumb-ul .bread-crumb-li .breadcrumb-link{
+    font-family: "Roboto", 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    font-size: 14px;
+    color: #999999;
+}
+
+.icons-breadcrumbs .bread-crumb .bread-crumb-ul .bread-crumb-li .breadcrumb-link-active{
+    color: #383838;
+    font-weight: normal;
+}
+
+.icons-breadcrumbs .bread-crumb .bread-crumb-ul li:not(:last-of-type)::after {
+    content: '\203a';
+    margin: 0 5px;
+    color: #cccccc;
+}
+
+button.grp {
+    transform: translateY(-100%);
+    background-color: #0275a3;
+    outline: none;
+    color: white;
+    border: 1px solid #0275a3;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.content {
+    position: absolute;
+    top: 25vh;
+    left: 18vw;
+    width: 82vw;
+    height: 75vh;
+    background-color: #e0e0e0;
+    /* z-index: 1; */
+}
+
+.content .box-details {
+    display: block;
+    margin: 10px 15px;
+    box-shadow: 0 1px 1rem rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+    height: fit-content;
+}
+
+.content .box-details .table-contents {
+    box-sizing: border-box;
+    width: -webkit-calc(100% - 21px);
+    width: calc(100% - 21px);
+    width: -moz-calc(100% - 21px);
+    width: -o-calc(100% - 21px);
+    display: inline-block;
+    margin: 10px;
+    background-color: #e0e0e0;
+}
+
+.content .box-details .table-contents .fas {
+    margin-right: 1em;
+}
+
+table {
+    font-size: 14px;
+    font-weight: 100;
+    font-family: Calibri;
+    width: 100%;
+}
+
+table tr {
+    height: 3em;
+}
+
+table tr td {
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 14px;
+    color: #575757;
+    text-align: center;
+}
+
+table tr th {
+    color: #575757;
+}
+
+input[type=checkbox]{
+    margin-right: 7em;
+    position: relative;
+    height: 20px;
+    width: 40px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    background: #c6c6c6;
+    border-radius: 50px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, .2);
+    float: right;
+}
+
+input[type=checkbox]:checked{
+    background-color: #1ac6ff;
+    transition: .5s;
+}
+
+input[type=checkbox]::before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50px;
+    transform: scale(1.04);
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 1px 3px rgba(0, 0, 0, .2);
+    transition-duration: .5s;
+}
+
+input[type=checkbox]:checked::before{
+    box-shadow: 0 0 3px 3px #4dd2ff;
+    left: 20px;
+}
+
+.fas.fa-qrcode {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.fas.fa-qrcode .tooltiptext {
+  font-family: "Calibri";
+  visibility: hidden;
+  width: 90px;
+  background-color: #303030;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px 10px;
+  position: absolute;
+  /* z-index: 1; */
+  top: -5px;
+  right: 125%;
+}
+
+.fas.fa-qrcode .tooltiptext::after {
+  content: "a";
+  color: #303030;
+  transform: rotate(270deg);
+  position: absolute;
+  top: 10%;
+  left: 82%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent #303030;
+}
+
+.fas.fa-qrcode:hover .tooltiptext {
+  visibility: visible;
+}

@@ -1,0 +1,328 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.asset-maintenance {
+  position: relative;
+  width: 18vw;
+  background-color: #0f2846;
+  height: 100vh;
+}
+
+.asset-maintenance .asset-txt {
+  position: absolute;
+  font-family: "Calibri";
+  text-align: center;
+  font-size: larger;
+  color: white;
+  top: 3em;
+  width: 100%;
+}
+
+.icons-breadcrumbs {
+  background-color: #f0f0f0;
+  position: absolute;
+  top: 6vh;
+  left: 18vw;
+  width: 82vw;
+  height: 19vh;
+  box-shadow: 0 1px 1rem rgba(0, 0, 0, 0.5);
+}
+
+.icons-breadcrumbs .bread-crumb h2 {
+  font-size: 24px;
+  font-family: "Calibri";
+  margin: 1em 1em;
+}
+
+.icons-breadcrumbs .bread-crumb ul {
+  margin-left: 1.4em;
+}
+
+.icons-breadcrumbs .bread-crumb .bread-crumb-ul li {
+  display: inline-block;
+}
+
+.icons-breadcrumbs
+  .bread-crumb
+  .bread-crumb-ul
+  .bread-crumb-li
+  .breadcrumb-link {
+  font-family: "Roboto", "Trebuchet MS", sans-serif;
+  text-decoration: none;
+  font-size: 14px;
+  color: #999999;
+}
+
+.icons-breadcrumbs
+  .bread-crumb
+  .bread-crumb-ul
+  .bread-crumb-li
+  .breadcrumb-link-active {
+  color: #383838;
+  font-weight: normal;
+}
+
+.icons-breadcrumbs .bread-crumb .bread-crumb-ul li:not(:last-of-type)::after {
+  content: "\203a";
+  margin: 0 5px;
+  color: #cccccc;
+}
+
+.float-right-contents {
+  margin-right: 1em;
+  float: right;
+}
+
+.float-right-contents .fas.fa-sitemap,
+.float-right-contents .fas.fa-table {
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.17);
+  transform: translateY(-100%);
+  margin-right: 0%;
+  padding: 6px 14px;
+}
+
+.fas.fa-sitemap {
+  background-color: #dedede;
+}
+
+.fas.fa-table {
+  background-color: #0275a3;
+  color: white;
+}
+
+.fas.fa-upload,
+.fas.fa-history,
+.fas.fa-qrcode {
+  margin-right: 8px;
+  color: white;
+  background-color: #0275a3;
+  padding: 6px 6px;
+  transform: translateY(-100%);
+  border-radius: 50%;
+}
+
+button.grp {
+  transform: translateY(-100%);
+  background-color: #0275a3;
+  outline: none;
+  color: white;
+  border: 1px solid #0275a3;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.content {
+  position: absolute;
+  top: 25vh;
+  left: 18vw;
+  width: 82vw;
+  height: 10vh;
+  background-color: #e0e0e0;
+  overflow-x: hidden;
+}
+
+.content .box-details {
+  padding: 0.5em 0;
+  margin: 10px 15px;
+  box-shadow: 0 1px 1rem rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+}
+
+.content .box-details .inner-box {
+  font-family: Roboto;
+  padding: 10px;
+  margin: 0 0.5em;
+  border: 2px solid #bfbfbf;
+}
+
+.content .box-details .inner-box .header {
+  line-height: 0;
+}
+
+.content .box-details .inner-box .header h2 {
+  padding-top: 0.8em;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.content .box-details .inner-box .header .fas {
+  cursor: pointer;
+  margin-right: 1.5em;
+  font-size: 16px;
+  color: #0275a3;
+  float: right;
+}
+
+.content .box-details .inner-box .fas:hover {
+  transform: scale(1.2);
+  transition: transform 300ms ease-in-out;
+}
+
+hr {
+  border: 1px solid #bfbfbf;
+  margin-top: 30px;
+}
+
+.content .box-details .inner-box .form-content {
+  display: grid;
+  grid-row-gap: 8px;
+  grid-template-columns: auto auto auto auto;
+  margin-left: 1.4em;
+  margin-top: 1.7em;
+}
+
+.content .box-details .inner-box .form-content select {
+  font-family: Roboto;
+  border-style: none none solid none;
+  outline: none;
+}
+
+.content .box-details .inner-box .form-content p {
+  font-size: 0.9em;
+  font-weight: normal;
+}
+
+.content .box-details .inner-box .form-content span {
+  padding-left: 1em;
+}
+
+.drop-down-div {
+  margin-top: -10px;
+  width: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.drop-down-div:after {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #b0b0b0;
+  position: absolute;
+  top: 40%;
+  right: 5px;
+  content: "";
+}
+
+.drop-down-div select {
+  padding: 12px 2px;
+  appearance: none;
+  width: 220px;
+  position: relative;
+  background: none;
+  border-bottom: 2px solid #b0b0b0;
+}
+
+input[type="text"] {
+  background-color: #f0f0f0;
+  width: 220px;
+  padding-bottom: 4px;
+  border-style: none none solid none;
+  border-bottom: 2px solid #b0b0b0;
+  margin-top: 0.5em;
+  outline: none;
+}
+
+.btns {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  position: relative;
+  left: 160%;
+}
+
+input[type="button"],
+input[type="reset"] {
+  font-family: Calibri;
+  font-size: 15px;
+  margin-right: 0.4em;
+  outline: none;
+  border-radius: 5px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+input[type="reset"] {
+  background-color: #bbaeae;
+  color: black;
+  border: 1px solid #c2c2c2;
+}
+
+input[value="Search"] {
+  background-color: #0275a3;
+  color: #fff;
+  border: 1px solid #0275a3;
+}
+
+.fas.fa-history .tooltiptext,
+.fas.fa-qrcode .tooltiptext {
+  font-size: 14px;
+  font-family: Calibri;
+  font-weight: 500;
+  visibility: hidden;
+  width: max-content;
+  background-color: #3b3b3b;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px 15px;
+  position: absolute;
+  top: -5px;
+  right: 110%;
+}
+
+.fas.fa-history .tooltiptext::after,
+.fas.fa-qrcode .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent #3b3b3b;
+}
+.fas.fa-history:hover .tooltiptext,
+.fas.fa-qrcode:hover .tooltiptext {
+  visibility: visible;
+}
+
+.float-right-contents i,
+.float-right-contents button {
+  cursor: pointer;
+}
+
+.fas.fa-upload .tooltiptext {
+  font-size: 14px;
+  font-family: Calibri;
+  font-weight: 500;
+  visibility: hidden;
+  width: max-content;
+  background-color: #3b3b3b;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px 15px;
+  position: absolute;
+  bottom: 120%;
+  left: 86%;
+  margin-left: -60px;
+}
+
+.fas.fa-upload .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #3b3b3b transparent transparent transparent;
+}
+
+.fas.fa-upload:hover .tooltiptext {
+  visibility: visible;
+}

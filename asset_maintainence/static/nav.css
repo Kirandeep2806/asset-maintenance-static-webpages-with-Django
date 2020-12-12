@@ -1,0 +1,84 @@
+.nav-wrapper {
+  background-color: #fff;
+  max-height: 5rem;
+  height: 6vh;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  -webkit-box-shadow: 0 1px 1rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 1rem rgba(0, 0, 0, 0.5);
+}
+
+.nav-wrapper .nav {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav-wrapper .nav .bard-logo {
+  margin-left: 2rem;
+  font-size: 1.2rem;
+}
+
+.nav-wrapper .nav .icus {
+  display: inline-block;
+  margin: auto 1.75rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  -webkit-transition: all ease-out 0.12s;
+  transition: all ease-out 0.12s;
+}
+
+.nav-wrapper .nav .icus:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.nav-wrapper .nav .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav-wrapper .nav .links .icons {
+  margin-right: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.nav-wrapper .nav .links .user-info {
+  margin: auto 1rem;
+}
+
+.nav-wrapper .nav .links .user-info .username {
+  display: block;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Roboto";
+  font-weight: 550;
+}
+
+.nav-wrapper .nav .links .user-info .username .fas {
+  font-size: 0.65rem;
+}

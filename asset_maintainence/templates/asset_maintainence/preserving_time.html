@@ -1,0 +1,200 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'nav.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'asset_maintainence/css/index.css' %}">
+    <script src="{% static 'asset_maintainence/js/fontawsome.js' %}"></script>
+    <title>Project</title>
+</head>
+
+<body>
+    <!--<div class="nav-wrapper">
+        <nav class="nav">
+            <div class="bard-logo">
+                <i class="fas icus fa-bars"></i>
+            </div>
+            <div class="links">
+                <div class="icons">
+                    <i class="fas icus fa-map-marker-alt"></i>
+                    <i class="fas icus fa-bell"></i>
+                    <i class="far icus fa-calendar-alt"></i>
+                    <i class="fas icus fa-question"></i>
+                    <i class="fas icus fa-expand full_screen" title="Full Screen"></i>
+                </div>
+                <div class="user-info">
+                    <span class="username">Hello, User <i class="fas fa-chevron-down"></i></span>
+                </div>
+            </div>
+        </nav>
+    </div>--> {% include 'nav.html' %}
+
+    <div class="asset-maintenance">
+        <span class="asset-txt">Asset Maintenance</span>
+    </div>
+
+    <div class="icons-breadcrumbs">
+        <div class="bread-crumb">
+            <h2>Asset Maintenance</h2>
+            <ul class="bread-crumb-ul">
+                <li class="bread-crumb-li">
+                    <a href="#" class="breadcrumb-link">Home</a>
+                </li>
+                <li class="bread-crumb-li">
+                    <a href="/" class="breadcrumb-link">Asset Maintenance</a>
+                </li>
+                <li class="bread-crumb-li">
+                    <a href="/schedule_configured" class="breadcrumb-link">SPLIT A/C - XYZ-123</a>
+                </li>
+                <li class="bread-crumb-li">
+                    <a href="#" class="breadcrumb-link breadcrumb-link-active">Add Schedule</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="addschedule">
+            <div class="addschedule-page">
+
+                <div class="schedule-name" required>
+                    <label for="schedule_name">Schedule Name<span>&nbsp;*</span></label>
+                    <input type="text" name="schedule_name" id="schedule_name" placeholder="Schedule Name">
+                </div>
+                <div class="managed-by">
+                    <label for="managed_by">Managed By<span>&nbsp;*</span></label><br>
+                    <select name="managed_by" id="managed_by" required>
+                        <option value="" disabled selected>Managed By</option>
+                        <option value="customer">Customer</option>
+                        <option value="service_agency">Service Agency</option>
+                    </select>
+                </div>
+                <div class="priority">
+                    <label for="priority">Priority<span>&nbsp;*</span></label><br>
+                    <select name="priority" id="priority" required>
+                        <option value="" disabled selected>Priority</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+                <div class="schedule-based-on" required>
+                    <label for="schedule_based_on">Schedule Based On<span>&nbsp;*</span></label>
+                    <select name="schedule_based_on" id="schedule_based_on" required>
+                        <option value="" disabled selected>Schedule Based On</option>
+                        <option value="calender">Calender</option>
+                        <option value="monitoring">Monitoring</option>
+                        <option value="calender_or_monitoring">Calender Or Monitoring</option>
+                        <option value="adhoc">Adhoc</option>
+                    </select>
+                </div>
+
+                <span></span>
+                <span></span>
+
+            </div>
+            <div class="calender-based">
+                <h3>Calender Based</h3>
+                <div class="frequency">
+                    <p>Frequency<span> *</span></p>
+                    <select name="hours" id="hours" required>
+                        <option value="" disabled selected>Frequency</option>
+                        <option value="hours">Hours</option>
+                        <option value="repeat_hours">Repeat Hours</option>
+                        <option value="days">Days</option>
+                        <option value="date">Date</option>
+                        <option value="months">Months</option>
+                        <option value="repeat_months">Repeat Months</option>
+                        <option value="years">Years</option>
+                    </select>
+                    <span></span>
+                    <p>Hours<span> *</span></p>
+                    <input type="number" name="hours_hours">
+                </div>
+                <br><br>
+                <input type="radio" name="calender_radio_btns" id="no_end_date">
+                <label for="no_end_date">No End Date</label><br>
+
+                <input type="radio" name="calender_radio_btns" id="end_after">
+                <label for="end_after">End After</label><input type="text" name="" id=""><span>Occurences</span><br><br>
+
+                <input type="radio" name="calender_radio_btns" id="end_by">
+                <label for="end_by">End By</label><input type="date" name="date" id="calendar_date"><br><br>
+            </div>
+            <div class="bottom-navbar">
+                <ul>
+                    <li>
+                        <a href="/addschedule" class="bottom-navbar-redirect">Task</a><a
+                            href="/preserving_time" class="bottom-navbar-redirect active">Preserving Time</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="preserving-time">
+                <div class="maintainence-duration">
+                    <p>Maintenance Duration</p><br><br>
+                    <div class="hours-minutes">
+                        <span>Hours</span>
+                        <input type="text" name="pre_hours" id="pre_hours" placeholder="Hours">
+                        <span>Minutes</span>
+                        <input type="text" name="pre_minutes" id="pre_minutes" placeholder="Minutes">
+                    </div>
+                </div>
+                <div class="stoppage-duration">
+                    <p>Stoppage Duration</p><br><br>
+                    <div class="hours-minutes">
+                        <span>Hours</span>
+                        <input type="text" name="pre_hours" id="pre_hours" placeholder="Hours">
+                        <span>Minutes</span>
+                        <input type="text" name="pre_minutes" id="pre_minutes" placeholder="Minutes">
+                    </div>
+                </div>
+                <div class="total-man-hours-required">
+                    <p>Total Man Hours Required</p><br><br>
+                    <div class="hours-minutes">
+                        <span>Hours</span>
+                        <input type="text" name="pre_hours" id="pre_hours" placeholder="Hours">
+                        <span>Minutes</span>
+                        <input type="text" name="pre_minutes" id="pre_minutes" placeholder="Minutes">
+                    </div>
+                </div>
+            </div>
+            <div class="add-asset-btns in-schedule">
+                <input type="button" value="Cancel">
+                <input type="button" value="Save">
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-modal-edit">
+        <div class="modal-edit">
+            <div class="topic-edit">
+                <p>Additional Info</p>
+                <span class="close-modal-edit">&times;</span>
+            </div>
+            <div class="topic-required-details-edit">
+                <p>Name&nbsp;<span>*</span></p>
+                <input type="text" name="name" id="name" autocomplete="off">
+                <p>Label&nbsp;<span>*</span></p>
+                <input type="text" name="label" id="label" autocomplete="off">
+                <p>Type&nbsp;<span>*</span></p> <br>
+                <select name="type" id="type">
+                    <option value="default">Select Field Type</option>
+                    <option value="first_line">Text (One line)</option>
+                    <option value="second_line">Text (Multiple line)</option>
+                </select>
+                <div class="split-it-for-btns-edit">
+                    <input type="button" value="Cancel" id="cancel_btn_edit">
+                    <input type="button" value="Submit">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="{% static 'asset_maintainence/js/index.js' %}"></script>
+
+</html>

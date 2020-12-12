@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'nav.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'asset_maintainence/css/index.css' %}">
+    <script src="{% static 'asset_maintainence/js/fontawsome.js' %}"></script>
+    <title>Project</title>
+</head>
+
+<body>
+    <!--<div class="nav-wrapper">
+        <nav class="nav">
+            <div class="bard-logo">
+                <i class="fas icus fa-bars"></i>
+            </div>
+            <div class="links">
+                <div class="icons">
+                    <i class="fas icus fa-map-marker-alt"></i>
+                    <i class="fas icus fa-bell"></i>
+                    <i class="far icus fa-calendar-alt"></i>
+                    <i class="fas icus fa-question"></i>
+                    <i class="fas icus fa-expand full_screen" title="Full Screen"></i>
+                </div>
+                <div class="user-info">
+                    <span class="username">Hello, User <i class="fas fa-chevron-down"></i></span>
+                </div>
+            </div>
+        </nav>
+    </div>--> {% include 'nav.html' %}
+
+    <div class="asset-maintenance">
+        <span class="asset-txt">Asset Maintenance</span>
+    </div>
+
+    <div class="icons-breadcrumbs">
+        <div class="bread-crumb">
+            <h2>Schedule</h2>
+            <ul class="bread-crumb-ul">
+                <li class="bread-crumb-li">
+                    <a href="#" class="breadcrumb-link">Home</a>
+                </li>
+                <li class="bread-crumb-li">
+                    <a href="/" class="breadcrumb-link">Asset Maintenance</a>
+                </li>
+                <li class="bread-crumb-li">
+                    <a href="#" class="breadcrumb-link breadcrumb-link-active">SPLIT A/C - XYZ-123</a>
+                </li>
+            </ul>
+            <div class="float-right-contents">
+                <i class="fas fa-history"><span class="tooltiptext">Import Logs</span></i>
+                <i class="fas fa-upload"><span class="tooltiptext">Bulk Upload</span></i>
+                <button class="grp">Add Schedule</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="box-details">
+            <div class="search_bar">
+                <button type="submit"><i class="fa fa-search"></i></button>
+                <input type="text" placeholder="Schedule Search" name="search" autocomplete="off">
+            </div>
+            <br><br><br>
+            <div class="main-content">
+                <p>No record(s) found.</p>
+            </div>
+            <input type="button" value="Back" id="schedule_back">
+        </div>
+    </div>
+
+    <div class="bg-modal">
+        <div class="modal">
+            <div class="topic">
+                <p>Bulk Upload Asset with Asset Id</p>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="topic-required-details">
+                <p>Upload Note<span>&nbsp;*</span></p><input type="text" name="upload_note" id="upload_note"
+                    placeholder="Upload Note" autocomplete="off" required><span></span>
+                <p>Upload File<span>&nbsp;*</span></p><input type="text" name="upload_file" id="upload_file"
+                    placeholder="Upload File" autocomplete="off" required>
+                <div class="file-btn-ui">
+                    <input type="file" id="file" accept=".xls,.xlsx" />
+                    <label for="file"><i class="fas fa-paperclip"></i></label>
+                </div>
+                <span></span>
+                <div class="split-it-again">
+                    <i class="fas fa-file-upload"></i>
+                    <p>Note : File format (XLS,XLSX) and File size is maximum 20MB</p>
+                </div>
+                <span></span>
+                <span></span>
+                <div class="split-it-for-btns">
+                    <input type="button" value="Cancel" id="cancel_btn">
+                    <input type="button" value="Import">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="{% static 'asset_maintainence/js/index.js' %}"></script>
+<script>
+    let $_history = document.getElementsByClassName('fas fa-history')[0]
+    let $_upload = document.getElementsByClassName('fas fa-upload')[0]
+    let $_grp = document.getElementsByClassName('grp')[0]
+    let $_schedule_back = document.getElementById('schedule_back')
+
+    $_history.addEventListener('click', () => {
+        gotoimportlogs();
+    })
+
+    $_upload.addEventListener('click', () => {
+        bulkupload();
+    })
+
+    $_grp.addEventListener('click', () => {
+        window.open('/schedule_configured_addschedule', '_self');
+    })
+
+    $_schedule_back.addEventListener('click', () => {
+        window.open('/', '_self');
+    })
+    
+</script>
+
+</html>
